@@ -248,9 +248,8 @@ class Reader extends Component {
   }
 }
 
-const url_string = window.location.href
-const url = new URL(url_string)
-const file = url.searchParams.get("pdf")
+const urlParams = new URLSearchParams(window.location.search)
+const file = urlParams.get("pdf")
 // const tagData = document.querySelector('#file')
 // const file = tagData.getAttribute('data-file')
 render(<Reader file={file} />, ReactContainer)
